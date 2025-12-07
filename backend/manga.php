@@ -33,6 +33,7 @@ try {
         }
 
         $status = $_GET["status"] ?? "";
+         $q = $_GET["q"] ?? "";
         $sql = "SELECT * FROM manga WHERE 1=1";
         $params = [];
 
