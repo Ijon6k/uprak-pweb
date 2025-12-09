@@ -84,7 +84,7 @@ export default function Search() {
         </div>
       )}
 
-      {/* Empty State (Belum cari apa-apa) */}
+    
       {!searchKey && !isLoading && (
         <div className="text-center text-gray-400 italic mt-10">
           Mulai pencarian untuk menemukan manga favoritmu.
