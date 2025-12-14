@@ -12,7 +12,7 @@ Teknologi:
 - React JS (frontend)  
 - PHP (backend)  
 - API Jikan (MyAnimeList)  
-- MySQL (opsional)
+- MySQL 
 
 Petunjuk singkat dan langsung — tanpa konfigurasi .env (karena API sudah di-hardcode di frontend).
 
