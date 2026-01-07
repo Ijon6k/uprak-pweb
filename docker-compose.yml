@@ -1,0 +1,38 @@
+services:
+  # Database MySQL
+  db:
+    image: mysql:8.0
+    container_name: manga_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: manga_readlist
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # Backend PHP
+  backend:
+    build: ./backend
+    container_name: manga_backend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./backend:/var/www/html
+    depends_on:
+      - db
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: manga_phpmyadmin
+    restart: always
+    environment:
+      - PMA_HOST=db
+      - PMA_ARBITRARY=1
+    ports:
+      - "8081:80" # Akses lewat localhost:8081
+    depends_on:
+      - db
+
+volumes:
+  db_data:
